@@ -69,20 +69,20 @@ reponseKaPromise.then(function (response) {
         matches.push(match);
     }
 
-    let matchesJSON = JSON.stringify(matches); // done
-    fs.writeFileSync("matches.json", matchesJSON, "utf-8"); // done
+    let matchesJSON = JSON.stringify(matches); 
+    fs.writeFileSync("matches.json", matchesJSON, "utf-8"); 
 
-    let teams = []; // done
+    let teams = []; 
     for (let i = 0; i < matches.length; i++) {
-        putTeamInTeamsArrayIfMissing(teams, matches[i]); // done
+        putTeamInTeamsArrayIfMissing(teams, matches[i]); 
     }
 
     for (let i = 0; i < matches.length; i++) {
-        putMatchInAppropriateTeam(teams, matches[i]); // done
+        putMatchInAppropriateTeam(teams, matches[i]); 
     }
 
-    let teamsJSON = JSON.stringify(teams); // done
-    fs.writeFileSync("teams.json", teamsJSON, "utf-8"); // done
+    let teamsJSON = JSON.stringify(teams); 
+    fs.writeFileSync("teams.json", teamsJSON, "utf-8"); 
 
     createExcelFile(teams);
     createFolders(teams);
